@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# by nu11secur1ty
 import requests
 import os
 
