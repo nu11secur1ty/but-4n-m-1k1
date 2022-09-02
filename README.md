@@ -1,5 +1,6 @@
 ## insect
 `insect` is a strong fuzzing URL program still in development mode:
+![](https://github.com/nu11secur1ty/insect/blob/main/docs/orictes-nasicornis.jpg)
 
 ## Usage:
 ```
