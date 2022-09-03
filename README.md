@@ -6,7 +6,7 @@
 `insect` is a strong fuzzing URL program still in development mode:
 
 <p align="center">
-  <img width="100" height="100" src="https://raw.githubusercontent.com/nu11secur1ty/insect/main/logo/Insect.png">
+  <img width="300" height="300" src="https://raw.githubusercontent.com/nu11secur1ty/insect/main/logo/Insect.png">
 </p>
 
 ## Usage:
