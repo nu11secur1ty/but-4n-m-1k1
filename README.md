@@ -4,7 +4,10 @@
 ## insect
 
 `insect` is a strong fuzzing URL program still in development mode:
-![](https://github.com/nu11secur1ty/insect/blob/main/logo/Insect.png)
+
+<p align="center">
+  <img width="100" height="100" src="https://raw.githubusercontent.com/nu11secur1ty/insect/main/logo/Insect.png">
+</p>
 
 ## Usage:
 ```
