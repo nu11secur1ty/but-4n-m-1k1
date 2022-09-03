@@ -16,5 +16,4 @@ git clone https://github.com/nu11secur1ty/insect.git
 cd insect
 python insect.py
 ```
-
-## Enjoy =)
+![](https://github.com/nu11secur1ty/insect/blob/main/docs/Screenshot%202022-09-03%20224548.png)
