@@ -4,6 +4,8 @@ import requests
 import os
 import time
 from datetime import datetime
+from colorama import init, Fore, Back, Style
+init(convert=True)
 
 
 target="http://pwnedhost.com/wordpress/wp-content/ai1wm-backups/"
@@ -9164,6 +9166,7 @@ exploit_list = ['!.gitignore',
 'WebSphereSamples/SingleSamples/AccountAndTransfer/create.html',
 'WebSphereSamples/SingleSamples/Increment/increment.html',
 'WebSphereSamples/YourCo/main.html',
+'pwnedhost.com-wordpress-20220901-061314-k0mgu7.wpress',
 'websql',
 'websql/',
 'webstat',
@@ -9487,5 +9490,6 @@ exploit_list = ['!.gitignore',
 '~web',
 '~www',
 '~xfs',]
+
 for ins in range(len(exploit_list)):
 	print(target+exploit_list[ins])

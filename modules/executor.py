@@ -3,16 +3,20 @@
 import requests
 import os
 import time
+from colorama import init, Fore, Back, Style
+init(convert=True)
 
-
-target=input("Give the URL target + path\n")
+target=input(Fore.MAGENTA +"Give the URL target + path\n")
+print(Style.RESET_ALL)
 payload = open('payload.txt').read().splitlines()
 
 remove_from_urls = []
 
 for url in payload:
     remove_url = requests.get(url)
+    print(Fore.YELLOW +"Scanning, please wait...\n")
     print(target,remove_url.status_code)
+    print(Style.RESET_ALL)
     if remove_url.status_code == 404:
         remove_from_urls.append(url)
         continue
