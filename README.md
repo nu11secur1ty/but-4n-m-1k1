@@ -3,7 +3,7 @@
 -------------------------------------------------------------------------------------------
 ## insect
 
-`insect` is a strong fuzzing URL program still in development mode:
+`insect` is a strong fuzzing URL program.
 
 <p align="center">
   <img width="355" height="355" src="https://raw.githubusercontent.com/nu11secur1ty/insect/main/logo/Insect.png">
