@@ -9487,6 +9487,5 @@ exploit_list = ['!.gitignore',
 '~web',
 '~www',
 '~xfs',]
-
 for ins in range(len(exploit_list)):
 	print(target+exploit_list[ins])
