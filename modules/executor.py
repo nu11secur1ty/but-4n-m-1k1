@@ -6,9 +6,10 @@ import time
 from colorama import init, Fore, Back, Style
 init(convert=True)
 
+
 target=input(Fore.MAGENTA +"Give the URL target + path\n")
 print(Style.RESET_ALL)
-payload = open('payload.txt').read().splitlines()
+payload = open('modules/payload.txt').read().splitlines()
 
 remove_from_urls = []
 
@@ -22,7 +23,7 @@ for url in payload:
         continue
         
 payload = [url for url in payload if url not in remove_from_urls]
-print("Seraching STATUS:\n",payload)
+print("The scanning is done, please check your output.txt file...\n")
 
 # Save
 with open('output.txt', 'w+') as file:
