@@ -657,5 +657,5 @@ See [CONTRIBUTORS.md](https://github.com/maurosoria/dirsearch/blob/master/CONTRI
 License
 ---------------
 Copyright (C) Mauro Soria (maurosoria@gmail.com)
-
+Development for 2022 (C) nu11secur1ty (https://nu11secur1ty.com/)
 License: GNU General Public License, version 2
