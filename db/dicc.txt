@@ -3438,6 +3438,9 @@ blog/fckeditor
 blog/phpmyadmin/
 blog/wp-content/backup-db/
 blog/wp-content/backups/
+wordpress/wp-content/ai1wm-backups/
+pwnedhost.com-wordpress-20220901-061314-k0mgu7.wpress
+-wordpress-20220901-061314-k0mgu7.wpress
 blog/wp-login
 blog/wp-login.php
 blog_admin
