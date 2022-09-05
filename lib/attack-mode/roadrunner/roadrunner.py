@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Author nu11secur1ty
+# Author: nu11secur1ty 2022
 from selenium import webdriver
 import time
 import os
