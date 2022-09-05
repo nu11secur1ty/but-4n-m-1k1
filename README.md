@@ -633,7 +633,7 @@ References
 - [Getting access to 25000 employees details](https://medium.com/@ehsahil/getting-access-to-25k-employees-details-c085d18b73f0) by Sahil Ahamad
 - [Best Tools For Directory Bruteforcing](https://secnhack.in/multiple-ways-to-find-hidden-directory-on-web-server/) by Shubham Goyal
 - [Discover hidden files & directories on a webserver - dirsearch full tutorial](https://www.youtube.com/watch?v=jVxs5at0gxg) by CYBER BYTES
-- [Low protection directories, example:](https://streamable.com/m3xcxv)
+- [Low protection directories, example:](https://www.nu11secur1ty.com/2022/09/wordpress-all-in-one-wp-migration-764.html)
 
 Tips
 ---------------
