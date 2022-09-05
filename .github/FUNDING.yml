@@ -1,4 +1,2 @@
-# These are supported funding model platforms
-
-github: maurosoria
-github: nu11secur1ty
+# github: [nu11secur1ty]
+custom: ["https://www.nu11secur1ty.com/", "https://github.com/nu11secur1ty"]
