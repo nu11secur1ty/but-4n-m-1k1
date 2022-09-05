@@ -1,31 +1,44 @@
 #!/usr/bin/python
-# Author nu11secur1ty
-import os
-import time
-from colorama import init, Fore, Back, Style
-init(convert=True)
+# Idea: Mauro Soria  
+# Development: nu11secur1ty - 2022
 
-# Version
-VERSION = "1.4"
+import sys
 
-BANNER = f"""
-  ooooo                                              .   
-`888'                                            .o8   
- 888  ooo. .oo.    .oooo.o  .ooooo.   .ooooo.  .o888oo 
- 888  `888P"Y88b  d88(  "8 d88' `88b d88' `"Y8   888   
- 888   888   888  `"Y88b.  888ooo888 888         888   
- 888   888   888  o.  )88b 888    .o 888   .o8   888 . 
-o888o o888o o888o 8""888P' `Y8bod8P' `Y8bod8P'   "888" 
-"""
-print(Style.RESET_ALL)
-print(Fore.GREEN +"Wlcome to Insect",VERSION, "please wait to load the proglam...\n",BANNER)
-print(Style.RESET_ALL)
+from pkg_resources import DistributionNotFound, VersionConflict
 
-# Modules:
-os.system('python modules/payload-generator.py > modules/payload.txt')
-time.sleep(1)
-os.system('python modules/executor.py')
+from lib.core.data import options
+from lib.core.exceptions import FailedDependenciesInstallation
+from lib.core.installation import check_dependencies, install_dependencies
 
-print("\n")
-print(Fore.RED +"Please check the output.txt file, there you can find what you were searching for.\n")
-print(Style.RESET_ALL)
+if sys.version_info < (3, 10, 5):
+    sys.stdout.write("Sorry, insect requires Python 3.7 or higher\n")
+    sys.exit(1)
+
+try:
+    check_dependencies()
+except (DistributionNotFound, VersionConflict):
+    option = input("Missing required dependencies to run.\n"
+                   "Do you want insect to automatically install them? [Y/n] ")
+
+    if option.lower() == 'y':
+        print("Installing required dependencies...")
+
+        try:
+            install_dependencies()
+        except FailedDependenciesInstallation:
+            print("Failed to install dirsearch dependencies, try doing it manually.")
+            exit(1)
+
+
+def main():
+    from lib.core.options import parse_options
+
+    options.update(parse_options())
+
+    from lib.controller.controller import Controller
+
+    Controller()
+
+
+if __name__ == "__main__":
+    main()
