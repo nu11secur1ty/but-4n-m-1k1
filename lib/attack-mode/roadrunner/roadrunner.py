@@ -7,7 +7,7 @@ from colorama import init, Fore, Back, Style
 init(convert=True)
 import requests
 
-print("Give the CORRECT target URL\n")
+print("Give the CORRECT + PATH target URL\n")
 target=input()
 print("Test if you can access the directory\n")
 time.sleep(3)
