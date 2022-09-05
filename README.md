@@ -1,4 +1,6 @@
+<center>
 <img src="static/logo.png" alt="dirsearch" width="300px">
+</center>
 
 dirsearch - Web path discovery
 =========
