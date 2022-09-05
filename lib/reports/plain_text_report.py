@@ -12,7 +12,7 @@ from lib.utils.common import human_size
 
 class PlainTextReport(FileBaseReport):
     def get_header(self):
-        return f"# Dirsearch started {time.ctime()} as: {chr(32).join(sys.argv)}" + NEW_LINE * 2
+        return f"# Insect started {time.ctime()} as: {chr(32).join(sys.argv)}" + NEW_LINE * 2
 
     def generate(self, entries):
         output = self.get_header()
