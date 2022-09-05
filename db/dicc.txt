@@ -8322,6 +8322,7 @@ tconn.conf
 te_admin
 team/
 tech
+test.php
 technico.txt
 technology
 TechnologySamples/AddressBook
