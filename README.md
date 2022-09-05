@@ -1,6 +1,6 @@
-<center>
-<img src="static/logo.png" alt="dirsearch" width="300px">
-</center>
+<p align="center">
+  <img width="300" height="300" src="https://raw.githubusercontent.com/nu11secur1ty/insect/main/static/logo.png">
+</p>
 
 dirsearch - Web path discovery
 =========
