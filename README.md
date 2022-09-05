@@ -37,8 +37,8 @@ Table of Contents
   * [More example commands](#more-example-commands)
 * [Support Docker](#support-docker)
   * [Install Docker Linux](#install-docker-linux)
-  * [Build Image dirsearch](#build-image-dirsearch)
-  * [Using dirsearch](#using-dirsearch)
+  * [Build Image insect](#build-image-insect)
+  * [Using insect](#using-insect)
 * [References](#references)
 * [Tips](#tips)
 * [Contribution](#contribution)
@@ -64,7 +64,7 @@ Wordlists (IMPORTANT)
 ---------------
 **Summary:**
   - Wordlist is a text file, each line is a path.
-  - About extensions, unlike other tools, dirsearch only replaces the `%EXT%` keyword with extensions from **-e** flag.
+  - About extensions, unlike other tools, dirsearch and insect only replaces the `%EXT%` keyword with extensions from **-e** flag.
   - For wordlists without `%EXT%` (like [SecLists](https://github.com/danielmiessler/SecLists)), **-f | --force-extensions** switch is required to append extensions to every word in wordlist, as well as the `/`.
   - To apply your extensions to wordlist entries that have extensions already, use **-O** | **--overwrite-extensions** (Note: some extensions are excluded from being overwritted such as *.log*, *.json*, *.xml*, ... or media extensions like *.jpg*, *.png*)
   - To use multiple wordlists, you can separate your wordlists with commas. Example: `wordlist1.txt,wordlist2.txt`.
@@ -116,7 +116,7 @@ Options
 -------
 
 ```
-Usage: dirsearch.py [-u|--url] target [-e|--extensions] extensions [options]
+Usage: insect.py [-u|--url] target [-e|--extensions] extensions [options]
 
 Options:
   --version             show program's version number and exit
@@ -142,7 +142,7 @@ Options:
                         Extension list separated by commas (e.g. php,asp)
     -f, --force-extensions
                         Add extensions to the end of every wordlist entry. By
-                        default dirsearch only replaces the %EXT% keyword with
+                        default insect only replaces the %EXT% keyword with
                         extensions
     -O, --overwrite-extensions
                         Overwrite other extensions in the wordlist with your
@@ -273,10 +273,10 @@ Options:
 Configuration
 ---------------
 
-Default values for dirsearch flags can be edited in the configuration file, by default is `config.ini` but you can select another file with the `--config` flag
+Default values for dirsearch and insect flags can be edited in the configuration file, by default is `config.ini` but you can select another file with the `--config` flag
 
 ```ini
-# If you want to edit dirsearch default configurations, you can
+# If you want to edit dirsearch or insect default configurations, you can
 # edit values in this file. Everything after `#` is a comment
 # and won't be applied
 
@@ -325,7 +325,7 @@ delay = 0
 max-rate = 0
 max-retries = 1
 exit-on-error = False
-## By disabling `scheme` variable, dirsearch will automatically identify the URI scheme
+## By disabling `scheme` variable, insect will automatically identify the URI scheme
 # scheme = http
 # proxy = localhost:8080
 # proxy-file = /path/to/proxies.txt
@@ -344,7 +344,7 @@ show-redirects-history = False
 ## Support: plain, simple, json, xml, md, csv, html, sqlite
 report-format = plain
 autosave-report = True
-# log-file = /path/to/dirsearch.log
+# log-file = /path/to/insect.log
 # report-output-folder = /path/to/reports
 ```
 
@@ -354,38 +354,38 @@ How to use
 
 ![](https://github.com/nu11secur1ty/insect/blob/main/static/insect.gif)
 
-Some examples for how to use dirsearch - those are the most common arguments. If you need all, just use the **-h** argument.
+Some examples for how to use dirsearch and insect - those are the most common arguments. If you need all, just use the **-h** argument.
 
 ### Simple usage
 ```
-python3 dirsearch.py -u https://target
+python3 insect.py -u https://target
 ```
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target
+python3 insect.py -e php,html,js -u https://target
 ```
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target -w /path/to/wordlist
+python3 insect.py -e php,html,js -u https://target -w /path/to/wordlist
 ```
 
 ---
 ### Pausing progress
-dirsearch allows you to pause the scanning progress with CTRL+C, from here, you can save the progress (and continue later), skip the current target, or skip the current sub-directory.
+dirsearch and insect are allows you to pause the scanning progress with CTRL+C, from here, you can save the progress (and continue later), skip the current target, or skip the current sub-directory.
 
-<img src="static/pause.png" alt="Pausing dirsearch" width="475px">
+<img src="static/pause.png" alt="Pausing insect" width="475px">
 
 ----
 ### Recursion
-- Recursive brute-force is brute-forcing continuously the after of found directories. For example, if dirsearch finds `admin/`, it will brute-force `admin/*` (`*` is where it brute forces). To enable this feature, use **-r** (or **--recursive**) flag
+- Recursive brute-force is brute-forcing continuously the after of found directories. For example, if insect finds `admin/`, it will brute-force `admin/*` (`*` is where it brute forces). To enable this feature, use **-r** (or **--recursive**) flag
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target -r
+python3 insect.py -e php,html,js -u https://target -r
 ```
 - You can set the max recursion depth with **--recursion-depth**, and status codes to recurse with **--recursion-status**
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target -r --recursion-depth 3 --recursion-status 200-399
+python3 insect.py -e php,html,js -u https://target -r --recursion-depth 3 --recursion-status 200-399
 ```
 - There are 2 more options: **--force-recursive** and **--deep-recursive**
   - **Force recursive**: Brute force recursively all found paths, not just paths end with `/`
@@ -394,17 +394,17 @@ python3 dirsearch.py -e php,html,js -u https://target -r --recursion-depth 3 --r
 - If there are sub-directories that you do not want to brute-force recursively, use `--exclude-subdirs`
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target -r --exclude-subdirs image/,media/,css/
+python3 insect.py -e php,html,js -u https://target -r --exclude-subdirs image/,media/,css/
 ```
 
 ----
 ### Threads
-The thread number (**-t | --threads**) reflects the number of separated brute force processes. And so the bigger the thread number is, the faster dirsearch runs. By default, the number of threads is 25, but you can increase it if you want to speed up the progress.
+The thread number (**-t | --threads**) reflects the number of separated brute force processes. And so the bigger the thread number is, the faster dirsearch or insect runs. By default, the number of threads is 25, but you can increase it if you want to speed up the progress.
 
 In spite of that, the speed still depends a lot on the response time of the server. And as a warning, we advise you to keep the threads number not too big because it can cause DoS (Denial of Service).
 
 ```
-python3 dirsearch.py -e php,htm,js,bak,zip,tgz,txt -u https://target -t 20
+python3 insect.py -e php,htm,js,bak,zip,tgz,txt -u https://target -t 20
 ```
 
 ----
@@ -412,7 +412,7 @@ python3 dirsearch.py -e php,htm,js,bak,zip,tgz,txt -u https://target -t 20
 - **--prefixes**: Add custom prefixes to all entries
 
 ```
-python3 dirsearch.py -e php -u https://target --prefixes .,admin,_
+python3 insect.py -e php -u https://target --prefixes .,admin,_
 ```
 Wordlist:
 
@@ -431,7 +431,7 @@ _tools
 - **--suffixes**: Add custom suffixes to all entries
 
 ```
-python3 dirsearch.py -e php -u https://target --suffixes ~
+python3 insect.py -e php -u https://target --suffixes ~
 ```
 Wordlist:
 
@@ -461,28 +461,28 @@ Use **-i | --include-status** and **-x | --exclude-status** to select allowed an
 For more advanced filters: **--exclude-sizes**, **--exclude-texts**, **--exclude-regexps**, **--exclude-redirects** and **--exclude-response**
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target --exclude-sizes 1B,243KB
+python3 insect.py -e php,html,js -u https://target --exclude-sizes 1B,243KB
 ```
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target --exclude-texts "403 Forbidden"
+python3 insect.py -e php,html,js -u https://target --exclude-texts "403 Forbidden"
 ```
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target --exclude-regexps "^Error$"
+python3 insect.py -e php,html,js -u https://target --exclude-regexps "^Error$"
 ```
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target --exclude-redirects "https://(.*).okta.com/*"
+python3 insect.py -e php,html,js -u https://target --exclude-redirects "https://(.*).okta.com/*"
 ```
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target --exclude-response /error.html
+python3 insect.py -e php,html,js -u https://target --exclude-response /error.html
 ```
 
 ----
 ### Raw request
-dirsearch allows you to import the raw request from a file. The content would be something looked like this:
+dirsearch or insect are allows you to import the raw request from a file. The content would be something looked like this:
 
 ```http
 GET /admin HTTP/1.1
@@ -491,7 +491,7 @@ Cache-Control: max-age=0
 Accept: */*
 ```
 
-Since there is no way for dirsearch to know what the URI scheme is, you need to set it using the `--scheme` flag. By default, dirsearch automatically detects the scheme.
+Since there is no way for dirsearch or insect to know what the URI scheme is, you need to set it using the `--scheme` flag. By default, dirsearch and insect automatically detects the scheme.
 
 ----
 ### Wordlist formats
@@ -520,7 +520,7 @@ Index.html
 ### Exclude extensions
 Use **-X | --exclude-extensions** with an extension list will remove all paths in the wordlist that contains the given extensions
 
-`python3 dirsearch.py -u https://target -X jsp`
+`python3 insect.py -u https://target -X jsp`
 
 Wordlist:
 
@@ -539,23 +539,23 @@ admin.php
 - From an URL, you can scan a list of sub-directories with **--subdirs**.
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target --subdirs /,admin/,folder/
+python3 insect.py -e php,html,js -u https://target --subdirs /,admin/,folder/
 ```
 
 ----
 ### Proxies
-dirsearch supports SOCKS and HTTP proxy, with two options: a proxy server or a list of proxy servers.
+dirsearch and insect supports SOCKS and HTTP proxy, with two options: a proxy server or a list of proxy servers.
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target --proxy 127.0.0.1:8080
-```
-
-```
-python3 dirsearch.py -e php,html,js -u https://target --proxy socks5://10.10.0.1:8080
+python3 insect.py -e php,html,js -u https://target --proxy 127.0.0.1:8080
 ```
 
 ```
-python3 dirsearch.py -e php,html,js -u https://target --proxylist proxyservers.txt
+python3 insect.py -e php,html,js -u https://target --proxy socks5://10.10.0.1:8080
+```
+
+```
+python3 insect.py -e php,html,js -u https://target --proxylist proxyservers.txt
 ```
 
 ----
@@ -563,29 +563,29 @@ python3 dirsearch.py -e php,html,js -u https://target --proxylist proxyservers.t
 Supported report formats: **simple**, **plain**, **json**, **xml**, **md**, **csv**,  **html**, **sqlite**
 
 ```
-python3 dirsearch.py -e php -l URLs.txt --format plain -o report.txt
+python3 insect.py -e php -l URLs.txt --format plain -o report.txt
 ```
 
 ```
-python3 dirsearch.py -e php -u https://target --format html -o target.json
+python3 insect.py -e php -u https://target --format html -o target.json
 ```
 
 ----
 ### More example commands
 ```
-cat urls.txt | python3 dirsearch.py --stdin
+cat urls.txt | python3 insect.py --stdin
 ```
 
 ```
-python3 dirsearch.py -u https://target --max-time 360
+python3 insect.py -u https://target --max-time 360
 ```
 
 ```
-python3 dirsearch.py -u https://target --auth admin:pass --auth-type basic
+python3 insect.py -u https://target --auth admin:pass --auth-type basic
 ```
 
 ```
-python3 dirsearch.py -u https://target --header-list rate-limit-bypasses.txt
+python3 insect.py -u https://target --header-list rate-limit-bypasses.txt
 ```
 
 **There are more to discover, try yourself!**
@@ -602,19 +602,21 @@ curl -fsSL https://get.docker.com | bash
 
 > To use docker you need superuser power
 
-### Build Image dirsearch
+### Build Image dirsearch on insect
 To create image
 
 ```sh
 docker build -t "dirsearch:v0.4.2" .
+docker build -t "insect:latest" .
 ```
 
 > **dirsearch** is the name of the image and **v0.4.2** is the version
+> **insect** is the name of the image and **latest** is the version
 
-### Using dirsearch
+### Using dirsearch or insect
 For using
 ```sh
-docker run -it --rm "dirsearch:v0.4.2" -u target -e php,html,js,zip
+docker run -it --rm "insect:latest" -u target -e php,html,js,zip
 ```
 
 
@@ -633,7 +635,7 @@ References
 - [Getting access to 25000 employees details](https://medium.com/@ehsahil/getting-access-to-25k-employees-details-c085d18b73f0) by Sahil Ahamad
 - [Best Tools For Directory Bruteforcing](https://secnhack.in/multiple-ways-to-find-hidden-directory-on-web-server/) by Shubham Goyal
 - [Discover hidden files & directories on a webserver - dirsearch full tutorial](https://www.youtube.com/watch?v=jVxs5at0gxg) by CYBER BYTES
-- [Low protection directories - example.](https://www.nu11secur1ty.com/2022/09/wordpress-all-in-one-wp-migration-764.html) by nu11secur1ty
+- [Low protection directories find by using insect- example.](https://www.nu11secur1ty.com/2022/09/wordpress-all-in-one-wp-migration-764.html) by nu11secur1ty
 
 Tips
 ---------------
@@ -646,7 +648,7 @@ Tips
 - Brute-forcing CIDR is slow? Probably you forgot to reduce request timeout and request retries. Suggest: `--timeout 3 --retries 1`
 
 
-Contribution
+Contribution to original source
 ---------------
 We have been receiving a lot of helps from many people around the world to improve this tool. Thanks so much to everyone who have helped us so far!
 See [CONTRIBUTORS.md](https://github.com/maurosoria/dirsearch/blob/master/CONTRIBUTORS.md) to know who they are.
