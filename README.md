@@ -55,7 +55,7 @@ Choose one of these installation options:
 - Install with git: `git clone https://github.com/nu11secur1ty/insect.git --depth 1` (RECOMMENDED)
 - Install with ZIP file: [Download here](https://github.com/maurosoria/dirsearch/archive/master.zip)
 - Install with Docker: `docker build -t "insect:latest" .` (more information can be found [here](https://hub.docker.com/repository/docker/nu11secur1ty/insect#support-docker))
-- Installing from a package manager:
+## Installing from a package manager:
 - Install with PyPi: `pip3 install dirsearch`
 - Install with Kali Linux: `sudo apt-get install dirsearch` (deprecated)
 
