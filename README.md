@@ -611,6 +611,7 @@ docker build -t "insect:latest" .
 ```
 
 > **dirsearch** is the name of the image and **v0.4.2** is the version
+
 > **insect** is the name of the image and **latest** is the version
 
 ### Using dirsearch or insect
