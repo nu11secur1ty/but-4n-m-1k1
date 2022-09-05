@@ -13,5 +13,5 @@ RUN apk add \
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["./dirsearch.py"]
+ENTRYPOINT ["./insect.py"]
 CMD ["--help"]
