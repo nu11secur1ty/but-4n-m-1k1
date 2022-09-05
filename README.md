@@ -10,9 +10,8 @@ insect - Web path discovery
 An advanced command-line tool designed to brute force directories and files in webservers, AKA web path scanner
 
 **Idea** is being actively developed by [@maurosoria](https://twitter.com/_maurosoria) and [@shelld3v](https://twitter.com/shells3c_)
-**Developement-2022** is being actively developed by [@nu11secur1ty](https://nu11secur1ty.com) 
 
-*Reach to our [Discord server](https://discord.gg/2N22ZdAJRj) to communicate with the team at best*
+**Developement-2022** is being actively developed by [@nu11secur1ty](https://nu11secur1ty.com) 
 
 
 Table of Contents
