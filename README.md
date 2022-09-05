@@ -51,7 +51,7 @@ Tools:
 Installation & Usage
 ------------
 
-**Requirement: python 3.7 or higher**
+**Requirement: python 3.10.5 or higher**
 
 Choose one of these installation options:
 
