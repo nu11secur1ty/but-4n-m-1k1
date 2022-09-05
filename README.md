@@ -352,8 +352,6 @@ autosave-report = True
 How to use
 ---------------
 
-[![Dirsearch demo](https://asciinema.org/a/380112.svg)](https://asciinema.org/a/380112)
-
 ![](https://github.com/nu11secur1ty/insect/blob/main/static/insect.gif)
 
 Some examples for how to use dirsearch - those are the most common arguments. If you need all, just use the **-h** argument.
