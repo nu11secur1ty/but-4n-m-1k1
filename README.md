@@ -16,7 +16,7 @@ An advanced command-line tool designed to brute force directories and files in w
 
 Table of Contents
 ------------
-* [Attack-Modules-2022](#attack-mode)
+* [Attack-Modules-2022](https://github.com/nu11secur1ty/insect/tree/main/lib/attack-mode)
 * [Installation](#installation--usage)
 * [Wordlists](#wordlists-important)
 * [Options](#options)
