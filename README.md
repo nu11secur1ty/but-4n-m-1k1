@@ -2,19 +2,10 @@
   <img width="300" height="300" src="https://raw.githubusercontent.com/nu11secur1ty/insect/main/static/logo.png">
 </p>
 
-dirsearch - Web path discovery
+insect - Web path discovery
 =========
 
-![Build](https://img.shields.io/badge/Built%20with-Python-Blue)
-![License](https://img.shields.io/badge/license-GNU_General_Public_License-_red.svg)
-![Stars](https://img.shields.io/github/stars/maurosoria/dirsearch.svg)
-[![Release](https://img.shields.io/github/release/maurosoria/dirsearch.svg)](https://github.com/maurosoria/dirsearch/releases)
-[![Sponsors](https://img.shields.io/github/sponsors/maurosoria)](https://github.com/sponsors/maurosoria)
-[![Discord](https://img.shields.io/discord/992276296669339678.svg?logo=discord)](https://discord.gg/2N22ZdAJRj)
-[![Twitter](https://img.shields.io/twitter/follow/_dirsearch?label=Follow)](https://twitter.com/_dirsearch)
-
-
-**Current Release: v0.4.2 (2021.9.12)**
+**Current Release: v1.4 (20222.09.03)**
 
 An advanced command-line tool designed to brute force directories and files in webservers, AKA web path scanner
 
