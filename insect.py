@@ -11,7 +11,7 @@ from lib.core.exceptions import FailedDependenciesInstallation
 from lib.core.installation import check_dependencies, install_dependencies
 
 if sys.version_info < (3, 10, 5):
-    sys.stdout.write("Sorry, insect requires Python 3.7 or higher\n")
+    sys.stdout.write("Sorry, insect requires Python 3.10 or higher\n")
     sys.exit(1)
 
 try:
