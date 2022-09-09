@@ -16,3 +16,5 @@ colorama
 ntlm_auth
 pyparsing
 beautifulsoup4
+codespell 
+flake8
