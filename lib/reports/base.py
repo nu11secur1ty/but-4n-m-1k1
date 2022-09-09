@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Idea: Mauro Soria  
+# Idea: Mauro Soria
 # Development: nu11secur1ty - 2022
 
 from lib.core.decorators import locked
