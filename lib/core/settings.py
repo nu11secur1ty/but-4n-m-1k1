@@ -27,9 +27,8 @@ BANNER = f"""
 ,-| . ;-. ,-. ,-. |-  ,-. ;-. . ,-. ,-.    |  . ;-. ,-| ,-. ;-. 
 | | | |   |-' |   |   | | |   | |-' `-.    |- | | | | | |-' |   
 `-' ' '   `-' `-' `-' `-' '   ' `-' `-'    |  ' ' ' `-' `-' '   
-                                          -'                    v{VERSION}                      
+                                          -'                    v{VERSION}
 """
-
 SCRIPT_PATH = FileUtils.parent(__file__, 3)
 
 IS_WINDOWS = sys.platform in ("win32", "msys")
