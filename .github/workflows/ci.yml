@@ -15,11 +15,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
+        apt-get install python3
         python -m pip install --upgrade pip
         pip install codespell flake8 -r requirements.txt
     - name: Test
@@ -38,7 +39,7 @@ jobs:
         echo https://self-signed.badssl.com | python insect.py -w tmp_wordlist.txt --stdin --max-time 9 --auth u:p --auth-type basic --scheme http
 
     - name: Unit Test
-      run: python3 testing.py
+      run: python testing.py
 
     - name: Lint
       run: |
