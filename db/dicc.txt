@@ -1,3 +1,11 @@
+adsdad
+adsdad.html
+adsdad.txt
+adsdad.php
+adsdad.py
+adsdad.pl
+adsdad.xml
+adsdad.c
 !.gitignore
 !.htaccess
 !.htpasswd
