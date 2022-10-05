@@ -4192,6 +4192,8 @@ dashboard/
 dashboard/faq.html
 dashboard/howto.html
 dashboard/phpinfo.php
+phpinfo.php
+info.php
 dat
 dat.tar.gz
 dat.zip
