@@ -9285,6 +9285,7 @@ wp-content/plugins/super-forms/
 wp-content/plugins/wp-publication-archive/includes/openfile.php?file=
 wp-content/plugins/wpengine-snapshot/snapshots/
 wp-content/updraft/
+wp-content/upsupsystic/
 wp-content/upgrade/
 wp-content/uploads/
 wp-content/uploads/aiowps_backups/
